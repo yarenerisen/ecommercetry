@@ -1,0 +1,17 @@
+<div class="payment-container">
+  <h2>Payment Details</h2>
+  <div class="order-summary">
+    <p>Total Amount: {{ totalAmount | currency }}</p>
+  </div>
+
+  <form id="payment-form" (submit)="handlePayment($event)">
+    <div id="card-element">
+      </div>
+
+    <div id="card-errors" role="alert" style="color: red; margin-top: 10px;"></div>
+
+    <button [disabled]="isProcessing" id="submit-button" class="btn-pay">
+      {{ isProcessing ? 'Processing...' : 'Pay Now' }}
+    </button>
+  </form>
+</div>
